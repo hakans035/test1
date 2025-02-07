@@ -1,0 +1,157 @@
+Enhance the existing automation and AI business website design using React and Tailwind CSS, implementing the following design system:
+
+Color System:
+
+Primary Colors:
+- Brand Blue: #00A3FF
+  * Use for: Primary CTAs, important buttons, key accents, links
+  * Implementation: bg-[#00A3FF] text-[#00A3FF]
+- Pure Black: #000000
+  * Use for: Headers, body text, icons
+  * Implementation: text-black
+- Pure White: #FFFFFF
+  * Use for: Main backgrounds, text on dark backgrounds
+  * Implementation: bg-white text-white
+
+Secondary Colors:
+- Light Blue: #E6F7FF
+  * Use for: Section backgrounds, card backgrounds, hover states
+  * Implementation: bg-[#E6F7FF]
+- Medium Blue: #0077BB
+  * Use for: Button hover states, secondary accents
+  * Implementation: hover:bg-[#0077BB]
+- Light Gray: #F5F5F5
+  * Use for: Secondary backgrounds, disabled states
+  * Implementation: bg-[#F5F5F5]
+
+Design Components:
+
+1. Navigation Bar:
+- Background: Pure White (#FFFFFF)
+- Text: Pure Black (#000000)
+- Active Link: Brand Blue (#00A3FF)
+- Hover State: Medium Blue (#0077BB)
+- Shadow: subtle drop shadow
+- Height: 70px
+
+2. Hero Section:
+- Background: Pure White (#FFFFFF)
+- Main Heading: Pure Black (#000000)
+- Subtext: Pure Black with 80% opacity
+- CTA Button: Brand Blue (#00A3FF)
+- CTA Hover: Medium Blue (#0077BB)
+- Secondary Button: Light Blue (#E6F7FF) with Brand Blue text
+
+3. Feature Cards ("Why Choose AutomatePro?"):
+- Background: Pure White (#FFFFFF)
+- Border: 1px solid Light Gray (#F5F5F5)
+- Hover: Light Blue (#E6F7FF) background
+- Icons: Brand Blue (#00A3FF)
+- Text: Pure Black (#000000)
+- Shadow: subtle on hover
+
+Typography:
+
+1. Font Family:
+- Primary: Inter
+- Fallback: system-ui, sans-serif
+
+2. Font Sizes:
+- H1: 48px/3rem
+- H2: 36px/2.25rem
+- H3: 24px/1.5rem
+- Body: 16px/1rem
+- Small: 14px/0.875rem
+
+3. Font Weights:
+- Headers: Bold (700)
+- Body: Regular (400)
+- Buttons: Medium (500)
+
+Component Specifications:
+
+1. Buttons:
+Primary:
+- Background: Brand Blue (#00A3FF)
+- Text: White (#FFFFFF)
+- Hover: Medium Blue (#0077BB)
+- Padding: 12px 24px
+- Border Radius: 8px
+
+Secondary:
+- Background: Light Blue (#E6F7FF)
+- Text: Brand Blue (#00A3FF)
+- Hover: Brand Blue (#00A3FF) with White text
+- Border: 1px solid Brand Blue (#00A3FF)
+
+2. Cards:
+- Background: White (#FFFFFF)
+- Border: 1px solid Light Gray (#F5F5F5)
+- Radius: 12px
+- Padding: 24px
+- Hover: Light Blue (#E6F7FF) background
+- Shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+
+3. Input Fields:
+- Border: 1px solid Light Gray (#F5F5F5)
+- Focus: Brand Blue (#00A3FF) outline
+- Background: White (#FFFFFF)
+- Text: Pure Black (#000000)
+- Placeholder: Pure Black with 40% opacity
+
+Layout Guidelines:
+
+1. Spacing:
+- Container Max Width: 1200px
+- Padding: 
+  * Desktop: 64px (4rem)
+  * Tablet: 32px (2rem)
+  * Mobile: 24px (1.5rem)
+- Gap between sections: 80px (5rem)
+- Gap between elements: 24px (1.5rem)
+
+2. Grid:
+- 12-column system
+- Gutter: 24px
+- Responsive breakpoints:
+  * Mobile: 320px - 767px
+  * Tablet: 768px - 1023px
+  * Desktop: 1024px+
+
+Animations:
+
+1. Transitions:
+- Duration: 0.3s
+- Timing: ease-in-out
+- Properties: background-color, transform, opacity
+
+2. Hover Effects:
+- Scale: 1.02 on cards
+- Color transition on buttons
+- Opacity change on icons
+
+Accessibility:
+- Maintain WCAG 2.1 AA standards
+- Ensure proper contrast ratios
+- Focus states for all interactive elements
+- Semantic HTML structure
+
+Mobile Optimization:
+- Stack elements vertically
+- Adjust font sizes:
+  * H1: 36px
+  * H2: 28px
+  * H3: 20px
+- Increase touch targets to 44px minimum
+- Simplify navigation to hamburger menu
+- Maintain white space for readability
+
+Implementation Notes:
+1. Use Tailwind CSS utility classes
+2. Implement CSS custom properties for theme colors
+3. Create reusable component classes
+4. Ensure consistent spacing
+5. Optimize for performance
+6. Test across all breakpoints
+
+Please implement these design specifications while maintaining the existing functionality and content structure of the website.

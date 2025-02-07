@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 203 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 203 100% 91%;
+    --secondary-foreground: 203 100% 37%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 203 100% 91%;
+    --accent-foreground: 203 100% 37%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 203 100% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans text-foreground font-bold;
+  }
+
+  /* Mobile-first Typography */
+  h1 {
+    @apply text-[36px] leading-tight md:text-h1;
+  }
+
+  h2 {
+    @apply text-[28px] leading-tight md:text-h2;
+  }
+
+  h3 {
+    @apply text-[20px] leading-snug md:text-h3;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  small {
+    @apply text-sm;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-brand-blue text-white px-6 py-3 rounded-md font-medium
+           hover:bg-brand-blue-medium transition-colors duration-300;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-blue-light text-brand-blue px-6 py-3 rounded-md font-medium
+           border border-brand-blue hover:bg-brand-blue hover:text-white
+           transition-colors duration-300;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-lg p-6 border border-[#F5F5F5]
+           hover:bg-brand-blue-light transition-all duration-300
+           shadow-sm hover:shadow-md;
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-black hover:text-brand-blue transition-colors duration-300;
+  }
+
+  .nav-link.active {
+    @apply text-brand-blue;
+  }
+
+  /* Forms */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-md border border-[#F5F5F5]
+           focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/10
+           placeholder:text-black/40 outline-none transition-all duration-300;
+  }
+
+  /* Container */
+  .container {
+    @apply mx-auto px-6 md:px-8 lg:px-16 max-w-[1200px];
+  }
+
+  /* Sections */
+  .section {
+    @apply py-16 md:py-20 lg:py-xxl;
+  }
+
+  /* Features */
+  .feature-card {
+    @apply card hover:scale-102 transition-transform duration-300;
+  }
+
+  .feature-icon {
+    @apply text-brand-blue mb-4 text-2xl;
+  }
+
+  /* Container and Section Layouts */
+  .container {
+    @apply mx-auto px-4 md:px-8 max-w-[1200px];
+  }
+
+  .section {
+    @apply py-[40px] md:py-xxl;
+  }
+
+  .section-header {
+    @apply mb-xl text-center;
+  }
+
+  /* Grid System */
+  .grid-section {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md;
+  }
+
+
+  /* Content Blocks */
+  .content-block {
+    @apply max-w-[800px] mx-auto leading-relaxed;
+  }
+
+  .feature-block {
+    @apply flex flex-col md:flex-row items-center gap-lg;
+  }
+
+  /* Image Containers */
+  .service-icon {
+    @apply w-16 h-16;
+  }
+
+  .feature-image {
+    @apply aspect-video w-full rounded-lg;
+  }
+
+  .team-photo {
+    @apply aspect-square w-full rounded-full;
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav {
+    @apply fixed top-0 -left-full w-4/5 h-screen bg-white transition-all duration-300 z-50 md:hidden;
+  }
+
+  .mobile-nav.active {
+    @apply left-0;
+  }
+
+  .mobile-nav-overlay {
+    @apply hidden fixed inset-0 bg-black/50 z-40 md:hidden;
+  }
+
+  .mobile-nav-overlay.active {
+    @apply block;
+  }
+
+  /* Touch Targets */
+  .touch-target {
+    @apply min-w-[44px] min-h-[44px] p-3;
+  }
+
+  /* Form Elements */
+  .form-input.error {
+    @apply border-destructive focus:border-destructive focus:ring-destructive/10;
+  }
+
+  .form-label {
+    @apply block mb-2 font-medium text-foreground;
+  }
+
+  .required-label::after {
+    @apply content-['*'] text-destructive ml-1;
+  }
+
+  .form-group {
+    @apply mb-6;
+  }
+
+  .form-row {
+    @apply flex flex-col md:flex-row gap-4 mb-6;
+  }
+
+  /* Custom Select */
+  .select-wrapper {
+    @apply relative;
+  }
+
+  .custom-select {
+    @apply appearance-none form-input pr-10;
+  }
+
+  .select-icon {
+    @apply absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none;
+  }
+
+  /* Checkboxes and Radio */
+  .custom-checkbox {
+    @apply flex items-center gap-2 cursor-pointer;
+  }
+
+  .checkbox-input {
+    @apply w-5 h-5 border-2 border-brand-blue rounded;
+  }
+
+  /* Loading States */
+  .loading-spinner {
+    @apply w-6 h-6 border-3 border-muted border-t-brand-blue rounded-full animate-spin;
+  }
+
+  /* Feedback Messages */
+  .feedback-message {
+    @apply p-4 rounded-md mb-4;
+  }
+
+  .success-message {
+    @apply bg-green-50 text-green-800 border border-green-400;
+  }
+
+  .error-message {
+    @apply bg-red-50 text-red-800 border border-red-400;
+  }
+}
+
+@layer utilities {
+  /* Touch targets for mobile */
+  .touch-target {
+    @apply min-w-[44px] min-h-[44px];
+  }
+
+  /* Transitions */
+  .transition-base {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Responsive helpers */
+  .mobile-only {
+    @apply block md:hidden;
+  }
+
+  .desktop-only {
+    @apply hidden md:block;
+  }
+}
